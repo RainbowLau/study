@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Data
 @ToString
 public class Company implements Serializable {
-    private Integer id;
+    private String id;
     private String name;
     private String address;
 }

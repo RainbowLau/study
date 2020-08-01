@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.parsexml.dao.CompanyDao">
+    <sql id="company_attrs">
+        ID,NAME,ADDRESS
+    </sql>
+    <sql id="company_vals">
+        #{id},#{name},#{address}
+    </sql>
+
+  <!--  <insert id="saveCompany" parameterType="cn.parsexml.entity.Company">
+        INSERT INTO COMPANY <include refid="company_attrs"></include>)
+        VALUES(<include refid="company_vals"></include>)
+    </insert>-->
+
+    <insert id="saveCompany" parameterType="Company">
+        INSERT INTO COMPANY (id,name,address) VALUES (#{id},#{name},#{address})
+    </insert>
+
+</mapper>

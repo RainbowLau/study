@@ -28,7 +28,7 @@ public class TextCompanyDemo {
             Element element = (Element) iterator.next();
             Attribute id = element.attribute("id");
             company = new Company();
-            company.setId(Integer.valueOf(id.getValue()));
+            company.setId((id.getValue()));
 
             for (Iterator elementIterator = element.elementIterator();elementIterator.hasNext();){
                 Element element1 = (Element) elementIterator.next();
