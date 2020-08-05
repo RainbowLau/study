@@ -8,6 +8,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 
+import java.io.File;
 import java.io.InputStream;
 import java.util.Iterator;
 
@@ -17,9 +18,10 @@ public class TestXmlDemo {
 
 
         // 创建输入流 进行数据文件操作
-       // InputStream inputStream = TestXmlDemo.class.getClassLoader().getResourceAsStream("demo01.xml");
+        // InputStream inputStream = TestXmlDemo.class.getClassLoader().getResourceAsStream("demo01.xml");
 
-        Document document = reader.read("D:\\demo01.xml");
+
+        Document document = reader.read(new File("D:\\zxr\\ocr_pic\\保险资管\\new_pick.xml"));
 
         // 获取根节点
         Element rootElement = document.getRootElement();
@@ -29,7 +31,7 @@ public class TestXmlDemo {
         Iterator iterator = rootElement.elementIterator();
         while (iterator.hasNext()){
             Element element = (Element) iterator.next();
-            Attribute  idAttr = element.attribute("id");
+            Attribute  idAttr = element.attribute("results");
             System.out.print(idAttr.getValue());
             Iterator elementIterator = element.elementIterator();
             while (elementIterator.hasNext()){
